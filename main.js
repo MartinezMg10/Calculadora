@@ -5,6 +5,8 @@ const BotonDivision = document.getElementById("btn_/")
 const BotonMultiplicacion = document.getElementById("btn_*")
 const BotonIgual = document.getElementById("btn_=")
 const Simbolo = document.getElementById("label")
+const AC = document.getElementById("btn_AC")
+
 
 function operador(operando) {
     switch (operando) {
@@ -62,4 +64,9 @@ BotonMultiplicacion.addEventListener("click", () => {
 })
 
 
-
+AC.addEventListener("click", () => {
+    Simbolo.innerText=" "
+    Display.value = " "
+    num1.value = " "
+    num2.value = " "
+})

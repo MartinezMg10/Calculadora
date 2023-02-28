@@ -24,6 +24,10 @@ label{
     margin-right: 5px;
 }
 
+input{
+    text-align: center;
+}
+
 .container{
     height: 60%;
     width: 35%;

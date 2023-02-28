@@ -18,6 +18,12 @@ main{
     align-items: center;
 }
 
+label{
+    font-size: 2em;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .container{
     height: 60%;
     width: 35%;

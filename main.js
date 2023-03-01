@@ -6,74 +6,60 @@ const BotonMultiplicacion = document.getElementById("btn_*")
 const BotonIgual = document.getElementById("btn_=")
 const Simbolo = document.getElementById("label")
 const AC = document.getElementById("btn_AC")
-const num1 = document.getElementById("num1")
 
 
-function operador(operando) {
-    switch (operando) {
-        case '+':
-          resultado=parseFloat(numero1)+ parseFloat(num2)
-          console.log(resultado)
-          break;
-        case '-':
-            resultado=parseFloat(numero1)- parseFloat(num2)
-            console.log(resultado)
-          break;
-        case '/':
-            resultado=parseFloat(numero1)/ parseFloat(num2)
-            console.log(resultado)
-          break;
-        case '*':
-            resultado=parseFloat(numero1)*parseFloat(num2)
-            console.log(resultado)
-          break;
-      }
-    }
 
-    
-    let numero1,num2 = 0
-    let operando = ""
+for(let i =0;i <= 9;i++){
+  document.getElementById("btn_"+ i).addEventListener("click",presionar)
+}
 
-BotonDivision.addEventListener("click", () => {
-    Simbolo.innerText="/"
-    numero1= num1.value
-    num1.value = " "
-   operando = "/"
+function presionar(e){
+  console.log(e.target.value)
+  Display.innerHTML = Display.innerHTML + e.target.value
+}
+
+AC.addEventListener("click",()=>{
+  Display.innerHTML = ""
 })
 
-BotonSuma.addEventListener("click", () => {
-    Simbolo.innerText="+"
-    numero1= num1.value
-    num1.value = " "
-   operando = "+"
+addEventListener("keydown",(e)=>{
+  console.log(e.key)
+  Display.innerHTML = Display.innerHTML + e.key
 })
 
-BotonResta.addEventListener("click", () => {
-    Simbolo.innerText="-"
-    numero1= num1.value
-    num1.value = " "
-   operando = "-"
+/* function keyEvent(event) {
+  console.log(`Location of key pressed: ${event.location}`);
+} */
+
+let num1,num2 = 0
+
+BotonIgual.addEventListener("click",()=>{
+  num2 = parseInt(Display.textContent)
+  resultado = num1 + num2
+  Display.textContent = resultado
 })
 
-BotonMultiplicacion.addEventListener("click", () => {
-    Simbolo.innerText="*"
-    numero1= num1.value
-    num1.value = " "
-   operando = "*"
+BotonSuma.addEventListener("click",()=>{
+  num1 = parseInt(Display.textContent)
+  Display.textContent = ""
+  console.log(num1)
+
 })
 
-
-BotonIgual.addEventListener("click",() => {
-  num2 = num1.value
-  operador(operando);
-  Display.value=resultado
+BotonResta.addEventListener("click",()=>{
+  num1 = parseInt(Display.textContent)
+  Display.textContent = ""
+  console.log(num1)
 })
 
+BotonMultiplicacion.addEventListener("click",()=>{
+  num1 = parseInt(Display.textContent)
+  Display.textContent = ""
+  console.log(num1)
+})
 
-AC.addEventListener("click", () => {
-    Simbolo.innerText=" "
-    Display.value = " "
-    num1.value = " "
-    numero1 =0
-    num2 = 0
+BotonDivision.addEventListener("click",()=>{
+  num1 = parseInt(Display.textContent)
+  Display.textContent = ""
+  console.log(num1)
 })

@@ -7,6 +7,7 @@
 body{
     height: 100vh;
     width: 100vw;
+    background-color: rgba(57,71,100,255);
 }
 
 main{
@@ -30,12 +31,13 @@ input{
 
 .container{
     height: 60%;
-    width: 35%;
+    width: 30%;
     margin:0 auto;
-    border: 3px solid;
     display: flex;
     align-items: center;
     flex-direction: column;
+    border-radius: 20px;
+    background-color: rgba(36,44,67,255);
 }
 
 .input-grande{
@@ -43,6 +45,10 @@ input{
     height: 80px;
     margin-top: 20px;
     font-size: 2em;
+    background-color: rgba(24,32,51,255);
+    border: 0;
+    color: #FFF;
+    border-radius: 10px;
 }
 
 .container-inputs {
@@ -56,11 +62,11 @@ input{
     height: 80px;
     width: 80px;
     font-size: 2em;
+    color: rgba(66,79,107,255);
+    border-radius: 10px;
+    border: 0;
 }
 
-.container-buttons{
-    width: 80%;
-}
 
 .container-buttons-modificacion{
     width: 100%;
@@ -70,7 +76,22 @@ input{
     height: 60px;
     width: 60px;
     margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     font-size: 1.7em;
+    background-color: rgba(240,240,240,255);
+    border: 0;
+    border-radius: 10px;
+    color: rgba(66,79,107,255);
+    font-weight: 700;
+}
+
+.btn-ac{
+    background-color: rgba(98,112,151,255);
+    color: #FFF;
+}
+
+.btn-igual{
+    background-color: rgba(209,63,48,255);
+    color: #FFF;
 }

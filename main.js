@@ -14,52 +14,108 @@ for(let i =0;i <= 9;i++){
 }
 
 function presionar(e){
-  console.log(e.target.value)
-  Display.innerHTML = Display.innerHTML + e.target.value
+  Display.innerHTML = Display.innerHTML + parseInt(e.target.value)
 }
 
 AC.addEventListener("click",()=>{
-  Display.innerHTML = ""
+  Display.textContent = ""
 })
+
+let validar = 1
 
 addEventListener("keydown",(e)=>{
-  console.log(e.key)
-  Display.innerHTML = Display.innerHTML + e.key
+  validar = parseInt(e.key)
+
+  if(!isNaN(validar)) Display.innerHTML = Display.innerHTML + e.key
+
 })
 
-/* function keyEvent(event) {
-  console.log(`Location of key pressed: ${event.location}`);
-} */
 
 let num1,num2 = 0
+let operando = ""
+let resultado = 0
+
 
 BotonIgual.addEventListener("click",()=>{
   num2 = parseInt(Display.textContent)
-  resultado = num1 + num2
+  operador(operando)
   Display.textContent = resultado
 })
 
 BotonSuma.addEventListener("click",()=>{
   num1 = parseInt(Display.textContent)
   Display.textContent = ""
-  console.log(num1)
-
+  operando = "+"
 })
 
 BotonResta.addEventListener("click",()=>{
   num1 = parseInt(Display.textContent)
   Display.textContent = ""
-  console.log(num1)
+  operando = "-"
 })
 
 BotonMultiplicacion.addEventListener("click",()=>{
   num1 = parseInt(Display.textContent)
   Display.textContent = ""
-  console.log(num1)
+  operando = "*"
 })
 
 BotonDivision.addEventListener("click",()=>{
   num1 = parseInt(Display.textContent)
   Display.textContent = ""
-  console.log(num1)
+  operando = "/"
 })
+
+
+function operador(operando) {
+    switch (operando) {
+        case '+':
+          resultado=num1+ num2
+          console.log(resultado)
+          break;
+        case '-':
+            resultado=num1- num2
+            console.log(resultado)
+          break;
+        case '/':
+            resultado=num1/ num2
+            console.log(resultado)
+          break;
+        case '*':
+            resultado=num1*num2
+            console.log(resultado)
+          break;
+      }
+    }
+
+addEventListener("keydown", (e) => {
+  if (e.key === "+") {
+    num1 = parseInt(Display.textContent)
+    Display.textContent = ""
+    console.log(num1)
+    operando = "+"
+  }else if (e.key === "-") {
+    num1 = parseInt(Display.textContent)
+    Display.textContent = ""
+    console.log(num1)
+    operando = "-"
+  }else if (e.key === "*") {
+    num1 = parseInt(Display.textContent)
+    Display.textContent = ""
+    console.log(num1)
+    operando = "*"
+  }else if (e.key === "/") {
+    num1 = parseInt(Display.textContent)
+    Display.textContent = ""
+    console.log(num1)
+    operando = "/"
+  }else if (e.key === "Enter") {
+    num2 = parseInt(Display.textContent)
+    operador(operando);
+    Display.textContent = resultado;
+  }else if(e.key === "Backspace") {
+    Display.textContent = Display.textContent.slice(0, -1)
+    }else if(e.key === "Escape"){
+    Display.textContent = ""
+    }
+});

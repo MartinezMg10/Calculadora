@@ -31,61 +31,42 @@ function operador(operando) {
     }
 
     
+    let numero1,num2 = 0
+    let operando = ""
+
 BotonDivision.addEventListener("click", () => {
     Simbolo.innerText="/"
     numero1= num1.value
     num1.value = " "
-
-    BotonIgual.addEventListener("click",() => {
-        num2 = num1.value
-        operador("/")
-        Display.value=resultado
-    })
-
-    
+   operando = "/"
 })
 
 BotonSuma.addEventListener("click", () => {
     Simbolo.innerText="+"
     numero1= num1.value
     num1.value = " "
-    
-
-
-    BotonIgual.addEventListener("click",() => {
-        num2 = num1.value
-        operador("+")
-        Display.value=resultado
-
-    })
-    
+   operando = "+"
 })
 
 BotonResta.addEventListener("click", () => {
     Simbolo.innerText="-"
     numero1= num1.value
     num1.value = " "
-
-    BotonIgual.addEventListener("click",() => {
-        num2 = num1.value
-        operador("-")
-        Display.value=resultado
-
-    })
-
+   operando = "-"
 })
 
 BotonMultiplicacion.addEventListener("click", () => {
     Simbolo.innerText="*"
     numero1= num1.value
     num1.value = " "
+   operando = "*"
+})
 
-    BotonIgual.addEventListener("click",() => {
-        num2 = num1.value
-        operador("*")
-        Display.value=resultado
 
-    })
+BotonIgual.addEventListener("click",() => {
+  num2 = num1.value
+  operador(operando);
+  Display.value=resultado
 })
 
 

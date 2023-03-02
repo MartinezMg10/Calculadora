@@ -28,41 +28,34 @@ function operador(operando) {
           break;
       }
     }
+
+let operando = " "
+
 BotonDivision.addEventListener("click", () => {
     Simbolo.innerText="/"
-    BotonIgual.addEventListener("click",() => {
-        operador("/")
-        Display.value=resultado
-    })
+    operando = "/"
 })
 
 BotonSuma.addEventListener("click", () => {
     Simbolo.innerText="+"
-
-    BotonIgual.addEventListener("click",() => {
-        operador("+")
-        Display.value=resultado
-    })
+    operando = "+"
 })
 
 BotonResta.addEventListener("click", () => {
     Simbolo.innerText="-"
-
-    BotonIgual.addEventListener("click",() => {
-        operador("-")
-        Display.value=resultado
-    })
+    operando = "-"
 })
 
 BotonMultiplicacion.addEventListener("click", () => {
     Simbolo.innerText="*"
-
-    BotonIgual.addEventListener("click",() => {
-        operador("*")
-        Display.value=resultado
-    })
+    operando = "*"
 })
 
+
+BotonIgual.addEventListener("click",() => {
+  operador(operando)
+  Display.value=resultado
+})
 
 AC.addEventListener("click", () => {
     Simbolo.innerText=" "
